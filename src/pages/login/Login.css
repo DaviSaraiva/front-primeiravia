@@ -1,0 +1,60 @@
+#formLogin {
+  margin: 0;
+  padding: 0;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+#logo {
+  text-align: center;
+  margin-bottom: 90px;
+  margin-top: 10px;
+}
+
+#divButtonRegistro { 
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#texto-cadastro {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#logo img {
+  width: 50%;
+}
+
+#divForgotPassword {
+  height: fit-content;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 6px;
+}
+
+#backgroundImageLogin {
+  background-position: center;
+  background-image: url(../../images/estudante_fundo_registro.jpg);
+}
+
+#textToRegistro {
+  margin: 0;
+  margin-top: 32px;
+}
+
+#linkToRegistro {
+  margin: 0;
+  margin-left: 3px;
+  margin-top: 32px;
+}
+
+#linkToForgot {
+  margin: 0;
+  margin-left: 3px;
+  margin-top: 6px;
+}

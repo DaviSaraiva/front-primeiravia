@@ -1,0 +1,91 @@
+@media only screen and (max-width: 600px) {
+  .divTitleMainP {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #817f7f;
+  }
+
+  .divTitleMain {
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid #817f7f; */
+  }
+
+  #btnAddSolicitacaoMobile {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    height: 60px;
+    width: 60px;
+    z-index: 9999999999;
+  }
+  
+  #btnAddSolicitacaoDesktop {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .divTitleMainP {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #817f7f;
+  }
+
+  .divTitleMain {
+    height: 8vh;
+    display: flex;
+    padding-top: 22.4px;
+    justify-content: space-between;
+    border-bottom: 1px solid #817f7f;
+  }
+
+  #btnAddSolicitacaoMobile {
+    display: none;
+  }
+}
+
+#rowDataAluno {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+}
+
+#rowDataAluno p {
+  margin: 0;
+}
+
+#idNameAluno {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+}
+
+#idDataSolicitacao {
+  font-size: 16px;
+  margin: 0;
+  color: #817f7f;
+}
+
+#cardSolicitacao {
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-bottom: 10px;
+}
+
+.dataSolicitacao {
+  font-size: 12px;
+  color: #817f7f;
+  text-transform: capitalize;
+}
+
+#divSolicitacoes {
+  height: 75vh;
+  /* padding-bottom: 100px; */
+}

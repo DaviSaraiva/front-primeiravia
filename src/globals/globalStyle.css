@@ -1,0 +1,335 @@
+.rccs__card {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 15vw !important;
+  height: 9vw !important;
+  /* height: 100px !important; */
+}
+
+.rccs__number, .rccs__name {
+  font-size: 0.9vw !important;
+}
+
+.rccs__expiry__valid, .rccs__expiry__value {
+  font-size: 0.7vw !important;
+}
+
+.cardStatusAtualizacao {
+  height: 2px; 
+}
+
+.divDados {
+  min-height: 75vh;
+  max-height: 84vh;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+@media only screen and (max-width: 400px) {
+  .divSteps {
+    min-height: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (min-width: 401px) {
+  .divSteps {
+    min-height: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .divSteps {
+    min-height: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+.rowDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.divLoadPicture {
+  padding: 16px;
+  background-color: #f8f7f7;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixedBottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999999;
+}
+
+.fullDiv {
+  height: 100vh;
+  background-color: #fcfcfc;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.accessFormTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #0f496a;
+  margin: 0;
+  margin-left: 6px;
+}
+
+.accessFormSubTitle {
+  text-align: center;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #0f496a;
+  margin-bottom: 0;
+  margin-left: 6px;
+}
+
+.borderBlack {
+  border: 1px solid black;
+}
+
+.ant-form-item {
+  margin: 5px !important;
+  box-shadow: transparent;
+}
+
+.alignedCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerVertical {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.titleDiv p {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.buttonBackTransparent {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 40px;
+  width: 6vw;
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-width: 0px;
+  border-radius: 25px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.buttonBackTransparent img {
+  height: auto;
+  width: 25%;
+}
+
+.buttonBackTransparent p {
+  font-size: 1vw;
+}
+
+.greenButton {
+  background-color: forestgreen !important;
+  border: none !important;
+  height: 50px !important;
+  border-radius: 5px !important;
+  color: white !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+}
+
+.divValores {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subTitleMainP {
+  margin: 0;
+  font-size: 16px;
+  color: #817f7f;
+}
+
+.subTitleMainPJustified {
+  margin: 0;
+  font-size: 15px;
+  color: #817f7f;
+  text-align: justify;
+}
+
+.firstRowFinalModal {
+}
+
+.rowsFinalModal {
+  /* border-left: 1px solid #817f7f !important; */
+}
+
+.colFinalModal {
+  height: 50px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin: 0px !important;
+}
+
+.colFinalModal p {
+  margin: 0px;
+  margin-left: 6px;
+  text-transform: capitalize;
+}
+
+form.input {
+  box-shadow: rgba(197, 205, 216, 0.9) 0px 0px 8px 0px;
+  border-radius: 4px;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: start;
+  letter-spacing: normal;
+  padding: 11px 6px 11px 6px !important;
+}
+
+.inputText {
+  height: 40px !important;
+}
+
+.titleForm {
+  margin: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: normal;
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+.subTitleForm {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+label {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: start;
+  letter-spacing: normal;
+  color: #0f496a;
+  font-weight: bold;
+}
+
+.divWithBoxShadow {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.formItemSelector {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  margin-right: 5px !important;
+  box-shadow: rgba(197, 205, 216, 0.9) 0px 0px 8px 0px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-family: "Roboto-Regular", sans-serif;
+  letter-spacing: normal;
+  padding: 3px 6px 0px 6px !important;
+  outline: none;
+  background-color: white;
+  color: #495057;
+}
+
+.divButtonNext {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.divButtonPrev {
+  display: flex !important;
+  flex-direction: row !important;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.divBtnCadastrese {
+  display: flex;
+  padding: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.divBtnCadastrese p {
+  margin: 0;
+}
+
+.padding16 {
+  padding-left: 16px;
+}
+
+.paddingT16 {
+  padding-top: 16px;
+}
+
+.divWithBackgroundImage {
+  height: 100vh;
+  overflow-y:auto; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center center;
+}

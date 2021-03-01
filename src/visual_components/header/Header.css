@@ -1,0 +1,200 @@
+/* HEADER */
+
+.divContainerHeader {
+  height: 8vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+
+@media only screen and (max-width: 800px) {
+  /* mobile */
+  .invertedDiv {
+    display: none;
+  }
+
+  #aBackLogin {
+    margin-top: 0vh;
+    width: 100%;
+  }
+
+  #buttonBackLogin { 
+    font-size: 4vh;
+    color: black;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  /* desktop */
+  #aBackLogin {
+    margin-top: 0vh;
+    width: 100%;
+  }
+
+  #buttonBackLogin { 
+    font-size: 2vh;
+    color: black;
+  }
+
+  .invertedDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #buttonBackHeader {
+    height: auto;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.alignedCenter {
+  display: flex;
+  flex-direction: row;
+}
+
+.alignCenterVertical {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.invertedDiv p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.invertedDiv a {
+  margin: 0;
+  font-size: 14px;
+}
+
+.buttonBack {
+  height: 30px;
+  background-color: #e8f6fc;
+  color: #0299db;
+  border: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.buttonBack p {
+  margin: 0;
+}
+
+.buttonBack img {
+  margin: 0;
+  margin-top: -0.15rem;
+  height: 0.875rem;
+}
+
+#divLogoHeader {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin-top: 0;
+  padding-left: 6px;
+}
+
+#divLogoHeaderSimple {
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+#logoHeader {
+  height: auto;
+  width: 100%;
+}
+
+#logoHeaderSimple {
+  height: 4vh;
+  width: auto;
+}
+
+/* .divMenuHeader {
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.itemMenuHeader {
+  padding: 0px 10px;
+  height: 50px;
+  min-width: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.itemMenuHeader:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.itemMenuHeader:hover p {
+  color: green;
+  transform: translateY(-3px);
+  transition-duration: 0.2s;
+}
+
+.itemMenuHeader:active {
+  background-color: transparent;
+  transform: translateY(1px);
+}
+
+.itemContent {
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemContent p {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.divBaseMenu {
+  height: 5px;
+  width: 100%;
+  background-color: blue;
+}
+
+.divTriangleUp {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid blue;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  margin-top: 40px;
+  z-index: 25;
+} */

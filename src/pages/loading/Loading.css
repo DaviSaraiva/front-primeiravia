@@ -1,0 +1,18 @@
+#divRedirectContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#loadingImg {
+    height: 50px;
+    margin-top: 16px;
+}
+
+#logoRedirect {
+    height: 50px;
+    margin-left: 16px;
+}

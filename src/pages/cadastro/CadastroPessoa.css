@@ -1,0 +1,179 @@
+.cardFormAtualizacao {
+  height: fit-content;
+  width: 100%;
+  padding: 32px 64px 32px 64px !important;
+  margin-top: 16px;
+  background-color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.uploadButton {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px dashed rgb(105, 105, 105);
+}
+
+.divImageUploaded {
+  min-height: fit-content;
+  width: 100%;
+  padding: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(105, 105, 105);
+}
+
+.uploadButtonError {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px dashed rgb(255, 45, 45);
+}
+
+.plusUploadButton {
+  font-size: 16px;
+  color: rgb(10, 10, 10);
+}
+
+.plusUploadButtonError {
+  font-size: 16px;
+  color: rgb(255, 45, 45);
+}
+
+.titleUploadArea {
+  font-size: 16px;
+  text-align: center;
+  color: #0f496a;
+  font-weight: bold;
+}
+
+.textUploadButton {
+  font-size: 14px;
+  text-align: center;
+  color: rgb(10, 10, 10);
+}
+
+.textUploadButtonError {
+  font-size: 14px;
+  text-align: center;
+  color: rgb(255, 45, 45);
+}
+
+#row-input {
+  padding: 0px;
+  margin: 0px;
+}
+/* .ant-form-item{
+  margin-bottom: 0px !important;
+} */
+/* 
+button{
+  margin-top: 5% !important;
+} */
+/* .ant-picker{
+  height: 50px !important;
+    border: none !important;
+} */
+
+#divFooterCarteira {
+  min-height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+#divFooterCarteira Button{
+  margin-left: 16px;
+}
+
+@media only screen and (max-width: 400px) {
+  #buttonCorrigirFinal {
+    display: none;
+  }
+  #buttonCorrigirFinalSmall {
+    height: 40px;
+    margin-top: 24px;
+    color: black;
+  }
+}
+
+@media only screen and (min-width: 401px) {
+  #buttonCorrigirFinal {
+    height: 40px;
+    margin-top: 24px;
+    color: black;
+  }
+  #buttonCorrigirFinalSmall {
+    display: none;
+  }
+}
+
+#buttonConfirmFinal {
+  background-color: rgb(53, 139, 53);
+  border: none;
+  height: 40px;
+  margin-top: 24px;
+  color: white;
+}
+
+#botao-enviar-carteira {
+  background-color: rgb(53, 139, 53);
+  border: none;
+}
+#docidentidadeestudante_uf {
+  width: 30% !important;
+}
+#linha-cadastro-aluno {
+  margin: 20px !important;
+}
+#info-envio-foto {
+  background-color: #f8f7f7;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+#botaocadpessoa,
+.steps-action {
+  text-align: center !important;
+}
+
+#buttonNext {
+  background-color: #548d27 !important;
+  border-color: #548d27 !important;
+  height: 40px;
+  width: 100% !important;
+  border-radius: 10px;
+}
+
+#pTitleFotoEstudante {
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+}
+
+#buttonPrev {
+  border-radius: 10px !important;
+  height: 40px;
+  width: 100% !important;
+  margin-left: 6px;
+}
+
+#selectCity {
+  color: black !important;
+  background-color: blueviolet !important;
+}
+
+#textHowPictureHasToBe {
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}

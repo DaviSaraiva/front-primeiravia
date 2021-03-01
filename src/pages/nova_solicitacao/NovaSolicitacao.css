@@ -1,0 +1,108 @@
+.divDDD {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.divTelefone {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding-left: 16px;
+}
+
+.containerFormDiv {
+  height: 100vh;
+  overflow-y:auto; 
+  border:1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+#divWithBackgroundImage {
+  height: 100vh;
+  overflow-y:auto; 
+  border:1px;
+  /* background-image: url("../../images/estudante_fundo_main.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center center;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 16px;
+}
+
+.titleForm {
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: normal;
+  font-family: 'Roboto-Regular', sans-serif;
+}
+
+.subTitleForm {
+  color: #212529;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.firstLabelInputField {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: start;
+  letter-spacing: normal;
+  color: #0f496a;
+  font-weight: bold;
+  margin: 0px 0px 8px 0px;
+}
+
+.labelInputField {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: normal;
+  color: #0f496a;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  margin-left: 5px;
+}
+
+/* Input, Input.Password {
+  width: 100%;
+  box-shadow: rgba(197, 205, 216, 0.9) 0px 0px 8px 0px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: normal;
+  padding: 11px 6px 11px 6px !important;
+  outline: none;
+  color: #495057;
+} */
+
+/*
+.formItemSelector:focus {
+  height: 50px;
+  border: 2px solid forestgreen;
+} */
+
+.buttonSolicitar {
+  width: 100% !important;
+  margin-top: 38px !important;
+}
