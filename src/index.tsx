@@ -30,13 +30,10 @@ ReactDOM.render(
         <Route path="/pagamento" component={Pagamento} />
         <Route path="/atualizacao-cadastral" component={CadastroAtualizacao} />
         <Route path="/primeiravia-cadastro" component={CadastroPrimeiraVia} />
-
         <Route path="/homeatualizacao" component={HomeAtualizacao} />
         <Route path="/homeprimeira" component={homeprimeira} />
-
         <Route path="*" component={() => { return <div><p>Erro 404</p></div> }} />
       </Switch>
-      {/* <FooterSimple /> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

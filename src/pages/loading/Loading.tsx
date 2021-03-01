@@ -31,7 +31,12 @@ export default function Loading() {
     useEffect(() => {
         const timer1 = setInterval(() => {
             if (hasAddress) {
-                history.replace(address)
+                history.replace({
+                    pathname: address,
+                    state: {
+                        origin: '1via'
+                    }
+                })
             }
         }, 1000);
 
@@ -42,51 +47,55 @@ export default function Loading() {
 
 
     useEffect(() => {
-        getTransacao(estudanteLocal.id).then((res: any) => {
-            if (res === undefined) {
-                logout()
-                history.replace("/")
-            } else {
-                if (res.data.__transactions__ !== 404) {
-                    let transaction = res.data.__transactions__[0]
-                    let atualizacao = res.data.__transactions__[0].requestStatus;
-
-                    if (transaction.payment !== undefined) {
-                        if (transaction.payment.paymentStatus === "paid") {
-                            if (atualizacao === "first") {
-                                // message.info("ac")
-                                setHasAddress(true)
-                                setAddress('/atualizacao-cadastral')
-                                localStorage.setItem("isf", "true")
-                            } else {
-                                //message.info("hm")
-                                if (urlSolicitante === "bloqueio") {
+        getTransacao(estudanteLocal.id)
+            .then((res: any) => {
+                if (res === undefined) {
+                    logout()
+                    history.replace("/")
+                } else {
+                    if (res.data.__transactions__ !== 404) {
+                        let transaction = res.data.__transactions__[0]
+                        let atualizacao = res.data.__transactions__[0].requestStatus;
+                        alert(atualizacao)
+                        if (transaction.payment !== undefined) {
+                            if (transaction.payment.paymentStatus === "paid") {
+                                if (atualizacao === "first") {
+                                    // message.info("ac")
                                     setHasAddress(true)
-                                    if (atualizacao === "aprovado") {
-                                        setAddress('/minhas-solicitacoes')
+                                    setAddress('/atualizacao-cadastral')
+                                    localStorage.setItem("isf", "true")
+                                } else {
+                                    //message.info("hm")
+                                    if (urlSolicitante === "bloqueio") {
+                                        setHasAddress(true)
+                                        if (atualizacao === "aprovado") {
+                                            setAddress('/minhas-solicitacoes')
+                                        } else {
+                                            setAddress('/home')
+                                        }
                                     } else {
+                                        setHasAddress(true)
                                         setAddress('/home')
                                     }
-                                } else {
-                                    setHasAddress(true)
-                                    setAddress('/home')
                                 }
+                            } else {
+                                //message.info("pg1")
+                                setHasAddress(true)
+                                setAddress('/pagamento')
                             }
-                        } else {
-                            //message.info("pg1")
-                            setHasAddress(true)
-                            setAddress('/pagamento')
                         }
+
+
+                    } else {
+                        //message.info("pg2")
+                        setHasAddress(true)
+                        setAddress('/pagamento')
                     }
-
-
-                } else {
-                    //message.info("pg2")
-                    setHasAddress(true)
-                    setAddress('/pagamento')
                 }
-            }
-        })
+            })
+            .catch(() => {
+                
+            })
 
         let idPixStorage = localStorage.getItem("idPix")
         if (idPixStorage !== undefined && idPixStorage != null) {
@@ -102,7 +111,7 @@ export default function Loading() {
                 }
             })
         }
-    }, [])
+    }, [estudanteLocal.id, history, urlSolicitante])
 
     // if (estudanteLocal != null && estudanteLocal != undefined) {
     //     history.replace('/pagamento')
@@ -111,6 +120,7 @@ export default function Loading() {
     return (
         <div className={"fullDiv"}>
             <div id={"divRedirectContent"}>
+                <p>{address}</p>
                 <img id={"loadingImg"} src={"http://portal.ufvjm.edu.br/a-universidade/cursos/grade_curricular_ckan/loading.gif"} alt={"loading"} />
                 <img id={"logoRedirect"} src={"http://transmobibeneficios.com.br/estudante/assets/images/logo.svg"} alt={"logo"} />
             </div>

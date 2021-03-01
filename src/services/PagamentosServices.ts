@@ -9,7 +9,7 @@ async function verificarPagamento(id: string) {
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.get(URL_API + `/atualizacao-cadastral/verificarpagamento/` + id, { headers: headers })
+    let retorno = await axios.get(URL_API + `atualizacao-cadastral/verificarpagamento/` + id, { headers: headers })
     if (responseTokenIsInvalid(retorno)) {
         return undefined
     } else {
@@ -24,7 +24,7 @@ async function getTransacao(user_id: string) {
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.get(URL_API + `/atualizacao-cadastral/transacoes/` + user_id, { headers: headers })
+    let retorno = await axios.get(URL_API + `atualizacao-cadastral/transacoes/` + user_id, { headers: headers })
     if (responseTokenIsInvalid(retorno)) {
         return undefined
     } else {
@@ -39,7 +39,7 @@ async function postTransacao(user_id: string, method: string, values: any, nome:
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.post(URL_API + `/atualizacao-cadastral/gerartransacao/` + user_id, {
+    let retorno = await axios.post(URL_API + `atualizacao-cadastral/gerartransacao/` + user_id, {
         methodpurchase: method,
         values: values,
         user_data: {
@@ -64,7 +64,7 @@ async function verificarPagamentoPrimeira(id: string) {
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.get(URL_API + `/primeira-via/verificarpagamento/` + id, { headers: headers })
+    let retorno = await axios.get(URL_API + `primeira-via/verificarpagamento/` + id, { headers: headers })
     if (responseTokenIsInvalid(retorno)) {
         return undefined
     } else {
@@ -79,7 +79,7 @@ async function getTransacaoPrimeira(user_id: string) {
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.get(URL_API + `/primeira-via/transacoes/` + user_id, { headers: headers })
+    let retorno = await axios.get(URL_API + `primeira-via/transacoes/` + user_id, { headers: headers })
     if (responseTokenIsInvalid(retorno)) {
         return undefined
     } else {
@@ -93,7 +93,7 @@ async function postTransacaoPrimeira(user_id: string, method: string, values: an
         'Authorization': 'Bearer ' + token
     }
 
-    let retorno = await axios.post(URL_API + `/primeira-via/gerartransacao/` + user_id, {
+    let retorno = await axios.post(URL_API + `primeira-via/gerartransacao/` + user_id, {
         methodpurchase: method,
         values: values,
         user_data: {
