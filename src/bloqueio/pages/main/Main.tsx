@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Table, Tag, Modal, Button, message, Tooltip, Card } from "antd";
-import Header from "../../visual_components/header/Header";
-import ModalContent from "../../visual_components/modals/ModalContent"
+import Header from "../../../visual_components/header/Header";
+import ModalContent from "../../../visual_components/modals/ModalContent"
 import "./Main.css"
-import "../../globals/globalStyle.css";
-import { deleteSolicitacao, getSolicitacoesFromServer, updateSolicitacao } from "../../services/SolicitacoesService";
+import "../../../globals/globalStyle.css";
+import { deleteSolicitacao, getSolicitacoesFromServer, updateSolicitacao } from "../../../services/SolicitacoesService";
 import { DeleteFilled, EditFilled, ExclamationCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { getDateFromMoment, getOption, isLogged, logout, maskForDate } from "../../globals/globalFunctions";
+import { getDateFromMoment, getOption, isLogged, logout, maskForDate } from "../../../globals/globalFunctions";
 import { useHistory } from "react-router-dom";
 
 function Main() {

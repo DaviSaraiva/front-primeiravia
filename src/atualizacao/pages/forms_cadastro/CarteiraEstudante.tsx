@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line object-curly-newline
 import { Image, Col, Row, Button, Form, Upload, Skeleton, message } from 'antd';
-import Fotocarteira from '../../images/carteiraestudante.jpeg';
-import Fotocarteiraverso from '../../images/carteiraestudanteverso.jpeg';
+import Fotocarteira from '../../../images/carteiraestudante.jpeg';
+import Fotocarteiraverso from '../../../images/carteiraestudanteverso.jpeg';
 import { validarImg } from '../cadastro/CadastroPessoa';
-import { getBase64, getIdUser, logout } from '../../globals/globalFunctions';
-import { CheckOutlined, LeftOutlined, PlusOutlined, UploadOutlined, VerticalRightOutlined } from '@ant-design/icons';
+import { getBase64, getIdUser, logout } from '../../../globals/globalFunctions';
+import { CheckOutlined, LeftOutlined, UploadOutlined, VerticalRightOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
-import ModalVerifyInfoEstudante from '../../visual_components/modals/ModalVerifyInfoEstudante';
-import { confirmarDocumentos, getDocumentPicture, getDocuments, setFotoCarteira } from '../../services/AccessServices';
-import { getTransacao } from '../../services/PagamentosServices';
+import ModalVerifyInfoEstudante from '../../../visual_components/modals/ModalVerifyInfoEstudante';
+import { confirmarDocumentos, getDocumentPicture, getDocuments, setFotoCarteira } from '../../../services/AccessServices';
+import { getTransacao } from '../../../services/PagamentosServices';
 
 export default function FotoCarteiraEstudante(props: any) {
   let obj = getIdUser()

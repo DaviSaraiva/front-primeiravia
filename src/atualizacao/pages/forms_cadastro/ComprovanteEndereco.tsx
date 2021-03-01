@@ -5,9 +5,9 @@ import { Image, Form, Input, Col, Row, message, Button, Upload, Skeleton } from 
 import MaskedInput from 'antd-mask-input';
 import 'antd/dist/antd.css';
 import { validarImg } from '../cadastro/CadastroPessoa';
-import { buscarCep, getBase64, getIdUser, logout, validateMaskValue } from '../../globals/globalFunctions';
-import { PlusOutlined, UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
-import { getDadosPessoa, getDocumentPicture, getDocuments, setComprovanteEndereco, setDadosComprovanteEndereco } from '../../services/AccessServices';
+import { buscarCep, getBase64, getIdUser, logout, validateMaskValue } from '../../../globals/globalFunctions';
+import { UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
+import { getDadosPessoa, getDocumentPicture, getDocuments, setComprovanteEndereco, setDadosComprovanteEndereco } from '../../../services/AccessServices';
 import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
 

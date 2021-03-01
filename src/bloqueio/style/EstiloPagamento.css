@@ -1,0 +1,308 @@
+#btnpagar {
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .1rem;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  margin: 5px;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+/* .ant-tabs {
+  box-shadow: rgba(197, 205, 216, 0.952) 0px 0px 8px 0px;
+  margin: 50px;
+  width: 70%;
+  align-content: center;
+
+} */
+
+#centralizar {
+  margin: 15px;
+  text-align: center;
+  align-content: center;
+}
+
+#sair {
+  background-color: rgb(236, 13, 13);
+  margin: 10px;
+  font-size: 15px;
+}
+
+
+/* input {
+  box-shadow: rgba(197, 205, 216, 0.952) 0px 0px 8px 0px;
+  border-radius: 4px;
+  FONT-FAMILY: 'Roboto-Regular', sans-serif;
+  FONT-SIZE: 14px;
+  LINE-HEIGHT: 10px;
+  TEXT-ALIGN: start;
+  LETTER-SPACING: normal;
+  padding: 10px 2px 10px 2px !important;
+  margin: 15px;
+} */
+
+/* label {
+  FONT-FAMILY: 'Roboto-Regular', sans-serif;
+  FONT-SIZE: 14px;
+  LINE-HEIGHT: 21px;
+  TEXT-ALIGN: start;
+  LETTER-SPACING: normal;
+  color: #0f496a;
+  font-weight: bold;
+} */
+
+.ant-btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+  font-size: 25px;
+
+  height: 0%;
+  border-radius: 1rem;
+}
+
+/* .ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap::before,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-wrap::before,
+.ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap::after,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-wrap::after {
+  position: relative;
+} */
+
+
+#titulo {
+  text-align: center;
+}
+
+.steps {
+  margin-top: 30px;
+}
+
+.numerocartao {
+  width: 100%;
+  text-align: center;
+}
+
+.cv,
+.cep {
+  width: 100%;
+  text-align: center;
+}
+
+.nome {
+  text-align: left;
+}
+
+.data {
+  width: 90%;
+  text-align: center;
+}
+
+.cpf {
+  width: 85%;
+  text-align: center;
+}
+
+.cidade {
+  width: 96%
+}
+
+@media (max-width:768px) {
+
+  /* Ipad*/
+  .numerocartao {
+    width: 100;
+  }
+
+  .cpf {
+    width: 82%;
+  }
+
+  #localdouro {
+    width: 95%
+  }
+
+  .cidade {
+    width: 93%
+  }
+
+  .card {
+    display: none;
+
+
+  }
+
+
+}
+
+@media (max-width:540px) {
+
+  /* Tabletes e devices*/
+  .numerocartao {
+    width: 80%;
+  }
+
+  .cv {
+    width: 20%;
+    text-align: center;
+  }
+
+  .data {
+    width: 40%;
+  }
+
+  .nome {
+    width: 100%;
+  }
+
+  .cpf {
+    width: 70%;
+  }
+
+  .cep {
+    width: 50%;
+    text-align: center;
+  }
+
+  .numero {
+    width: 30%;
+  }
+
+  .uf {
+    width: 20%;
+  }
+
+
+}
+
+@media (max-width:320px) {
+
+  /* Tabletes e devices*/
+  .numerocartao {
+    width: 100%
+  }
+
+  .cv {
+    width: 20%;
+    text-align: center;
+  }
+
+  .data {
+    width: 45%;
+  }
+
+  .nome {
+    width: 100%;
+  }
+
+  .cpf {
+    width: 80%;
+  }
+
+  .cep {
+    width: 60%;
+    text-align: center;
+  }
+
+  .numero {
+    width: 30%;
+  }
+
+  .uf {
+    width: 20%;
+  }
+}
+
+.cpfBoleto {
+  text-align: center;
+}
+
+.cepBoleto {
+  text-align: center;
+  width: 100%;
+}
+
+.localdouroBoleto {
+  width: 99%;
+}
+
+.cidadeBoleto {
+  width: 96%
+}
+
+.ufBoleto {
+  text-align: center;
+}
+
+@media (max-width:768px) {
+  /* Ipad*/
+
+  .cepBoleto {
+    width: 60%;
+  }
+
+  .numeroBoleto {
+    width: 90%;
+  }
+
+  .ufBoleto {
+    width: 50%;
+  }
+
+}
+
+@media (max-width:540px) {
+
+  /* Tabletes e devices*/
+  .cpfBoleto {
+    width: 60%;
+  }
+
+  .nomeBoleto {
+    width: 90%;
+  }
+
+  .numeroBoleto {
+    width: 40%;
+  }
+
+  .ufBoleto {
+    width: 20%;
+  }
+}
+
+.card {
+  margin-top: 15%;
+}
+
+
+@media (mix-width:411px) {
+
+  /* Tabletes e devices*/
+  .nomeBoleto {
+    width: 90%;
+    background-color: red;
+  }
+}
+
+.uf {
+  text-align: center;
+}
+
+@media (max-width: 1240px) {
+  .tab {
+    background-position: center;
+    background-size: 0%;
+  }
+
+}
+
+@media (max-width: 1240px) {
+  .tab2 {
+    background-position: center;
+    background-size: 0%;
+  }
+
+}

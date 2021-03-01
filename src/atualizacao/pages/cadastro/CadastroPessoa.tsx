@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line object-curly-newline
 import { Steps, Row, Col, message, Alert } from 'antd';
 import 'antd/dist/antd.css';
-import '../../globals/globalStyle.css'
+import '../../../globals/globalStyle.css'
 import './CadastroPessoa.css';
 import Infoestudante from '../forms_cadastro/InfoEstudante';
 import Fotoestudante from '../forms_cadastro/FotoEstudante';
@@ -10,12 +10,12 @@ import Documentoident from '../forms_cadastro/DocumentoIdentificacao';
 import ComprovanteMatricula from '../forms_cadastro/ComprovanteMatricula';
 import ComprovanteEndereco from '../forms_cadastro/ComprovanteEndereco';
 import FotoCarteiraEstudante from '../forms_cadastro/CarteiraEstudante';
-import Header from '../../visual_components/header/Header';
+import Header from '../../../visual_components/header/Header';
 import { useHistory } from 'react-router-dom';
 import { CreditCardOutlined, FileDoneOutlined, HomeOutlined, IdcardOutlined, PictureOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
-import { getStep } from '../../services/AccessServices';
-import { getTransacao, verificarPagamento } from '../../services/PagamentosServices';
-import { isLogged, logout } from '../../globals/globalFunctions';
+import { getStep } from '../../../services/AccessServices';
+import { getTransacao, verificarPagamento } from '../../../services/PagamentosServices';
+import { isLogged, logout } from '../../../globals/globalFunctions';
 
 const { Step } = Steps;
 
@@ -182,7 +182,7 @@ export default function CadastroPessoa() {
 
   const currentMinusUnum = () => {
     setFirstAccess(false)
-    setCurrent(current-1)
+    setCurrent(current - 1)
   }
 
   const steps = [

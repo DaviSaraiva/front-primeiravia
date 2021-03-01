@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Steps, Row, Col, Card, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './Home.css'
-import '../../globals/globalStyle.css';
-import Header from '../../visual_components/header/Header';
-import { getIdUser, isLogged, logout } from '../../globals/globalFunctions';
-import { getDocuments, getPessoa } from '../../services/AccessServices';
+import '../../../globals/globalStyle.css';
+import Header from '../../../visual_components/header/Header';
+import { getIdUser, isLogged, logout } from '../../../globals/globalFunctions';
+import { getDocuments, getPessoa } from '../../../services/AccessServices';
 import { useHistory } from 'react-router-dom';
-import { getTransacao } from '../../services/PagamentosServices';
+import { getTransacao } from '../../../services/PagamentosServices';
 import { CheckCircleOutlined, ClockCircleOutlined, CloseCircleOutlined, DownOutlined, LeftOutlined, SmileOutlined, UpOutlined } from '@ant-design/icons';
 
-import successImage from '../../images/img_success.png'
-import failureImage from '../../images/img_failure.png'
-import analiseImage from '../../images/img_analise.png'
+import successImage from '../../../images/img_success.png'
+import failureImage from '../../../images/img_failure.png'
+import analiseImage from '../../../images/img_analise.png'
 
 const STATUS_REC = "recusado"
 const STATUS_ANA = "analise"

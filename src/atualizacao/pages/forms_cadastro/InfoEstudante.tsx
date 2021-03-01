@@ -8,10 +8,10 @@ import { Skeleton, Form, Input, Col, Row, Select, message, Button } from 'antd';
 import { cpf } from 'cpf-cnpj-validator';
 import MaskedInput from 'antd-mask-input';
 import 'antd/dist/antd.css';
-import '../../globals/globalStyle.css'
-import { getIdUser, isLogged, logout } from '../../globals/globalFunctions';
+import '../../../globals/globalStyle.css'
+import { getIdUser, isLogged, logout } from '../../../globals/globalFunctions';
 import { VerticalLeftOutlined } from '@ant-design/icons';
-import { getDadosPessoa, getInstituicoes, setCadastroPessoa } from '../../services/AccessServices';
+import { getDadosPessoa, getInstituicoes, setCadastroPessoa } from '../../../services/AccessServices';
 import { useHistory } from 'react-router-dom';
 
 const { Option } = Select;

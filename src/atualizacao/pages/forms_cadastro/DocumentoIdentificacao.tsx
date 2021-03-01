@@ -15,10 +15,10 @@ import {
 } from 'antd';
 import 'antd/dist/antd.css';
 import moment from 'moment';
-import { checkDateFieldData, date1IsAfterOrEqualThenDate2, getBase64, getDateFromMoment, getIdUser, logout } from '../../globals/globalFunctions';
-import '../../globals/globalStyle.css';
-import { PlusOutlined, UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
-import { getDadosPessoa, getDocumentPicture, getDocuments, setDadosIdentificacao, setIdentificaoFrente, setIdentificaoVerso } from '../../services/AccessServices';
+import { checkDateFieldData, date1IsAfterOrEqualThenDate2, getBase64, getDateFromMoment, getIdUser, logout } from '../../../globals/globalFunctions';
+import '../../../globals/globalStyle.css';
+import { UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
+import { getDadosPessoa, getDocumentPicture, getDocuments, setDadosIdentificacao, setIdentificaoFrente, setIdentificaoVerso } from '../../../services/AccessServices';
 import InputMask from 'antd-mask-input';
 import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
@@ -507,7 +507,7 @@ export default function Documentoident(props: any) {
                           selecteddate.setMinutes(0)
                           selecteddate.setSeconds(0)
 
-                          var currentdate = moment(new Date).format('YYYY/MM/DD HH:mm:ss');
+                          var currentdate = moment(new Date()).format('YYYY/MM/DD HH:mm:ss');
 
                           var datelimit = getDateFromMoment(currentdate)
                           datelimit.setDate(datelimit.getDate())
@@ -522,7 +522,7 @@ export default function Documentoident(props: any) {
                           if (checkDateFieldData(dateList) === 0) {
                             // message.success(JSON.stringify((dateList)))
                             if (date1IsAfterOrEqualThenDate2(datelimit, selecteddate) &&
-                                date1IsAfterOrEqualThenDate2(selecteddate, datelimit100)) {
+                              date1IsAfterOrEqualThenDate2(selecteddate, datelimit100)) {
                               setDateNascimento(e.target.value)
                               setDateNascIsValid(true)
                             } else {

@@ -3,13 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NovaSolicitacao from "./pages/nova_solicitacao/NovaSolicitacao";
-import Main from "./pages/main/Main";
+import NovaSolicitacao from "./bloqueio/pages/nova_solicitacao/NovaSolicitacao";
+import Main from "./bloqueio/pages/main/Main";
 import Login from "./pages/login/Login";
 import RegistrationForm from "./pages/register/Form";
 import Pagamento from "./pages/pagamento/Pagamento";
-import CadastroPessoa from "./pages/cadastro/CadastroPessoa";
-import Home from "./pages/home/Home";
+import CadastroPrimeiraVia from "./primeiraVia/pages/cadastro/CadastroPessoa";
+import CadastroAtualizacao from "./atualizacao/pages/cadastro/CadastroPessoa";
+import HomeAtualizacao from "./atualizacao/pages/home/Home";
+import homeprimeira from "./atualizacao/pages/home/Home";
 import Loading from "./pages/loading/Loading";
 import RecSenha from "./pages/recuperar_senha/RecSenha";
 import SegRecupera from "./pages/recuperar_senha/SegRecuperacao";
@@ -26,8 +28,12 @@ ReactDOM.render(
         <Route path="/redefinir-senha" component={SegRecupera} />
         <Route path="/nova-solicitacao" component={NovaSolicitacao} />
         <Route path="/pagamento" component={Pagamento} />
-        <Route path="/atualizacao-cadastral" component={CadastroPessoa} />
-        <Route path="/home" component={Home} />
+        <Route path="/atualizacao-cadastral" component={CadastroAtualizacao} />
+        <Route path="/primeiravia-cadastro" component={CadastroPrimeiraVia} />
+
+        <Route path="/homeatualizacao" component={HomeAtualizacao} />
+        <Route path="/homeprimeira" component={homeprimeira} />
+
         <Route path="*" component={() => { return <div><p>Erro 404</p></div> }} />
       </Switch>
       {/* <FooterSimple /> */}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line object-curly-newline
 import { Form, Image, Row, Col, Button, Upload, Skeleton, message } from 'antd';
-import Fotoexemplo from '../../images/fotoexemplo.jpg';
+import Fotoexemplo from '../../../images/fotoexemplo.jpg';
 import { validarImg } from '../cadastro/CadastroPessoa';
-import { getIdUser, logout, getBase64 } from '../../globals/globalFunctions';
-import { PlusOutlined, UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
-import { getDocumentPicture, getDocuments, setFotoEstudante } from '../../services/AccessServices';
+import { getIdUser, logout, getBase64 } from '../../../globals/globalFunctions';
+import { UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
+import { getDocumentPicture, getDocuments, setFotoEstudante } from '../../../services/AccessServices';
 import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
 
@@ -116,8 +116,8 @@ export default function Fotoestudante(props: any) {
           setLoading(false)
           setLoadingback(false)
         });
-      
-        if (loadingback) {
+
+      if (loadingback) {
         props.goToPrev()
       } else {
         props.goToNext()

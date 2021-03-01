@@ -15,10 +15,10 @@ import {
 } from 'antd';
 import 'antd/dist/antd.css';
 import { validarImg } from '../cadastro/CadastroPessoa';
-import { getBase64, getIdUser, logout } from '../../globals/globalFunctions';
-import { PlusOutlined, UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
+import { getBase64, getIdUser, logout } from '../../../globals/globalFunctions';
+import { UploadOutlined, VerticalLeftOutlined, VerticalRightOutlined } from '@ant-design/icons';
 import { MaskedInput } from 'antd-mask-input';
-import { getDadosPessoa, getDocumentPicture, getDocuments, setComprovanteMatricula, setDadosComprovanteMatricula } from '../../services/AccessServices';
+import { getDadosPessoa, getDocumentPicture, getDocuments, setComprovanteMatricula, setDadosComprovanteMatricula } from '../../../services/AccessServices';
 import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
 

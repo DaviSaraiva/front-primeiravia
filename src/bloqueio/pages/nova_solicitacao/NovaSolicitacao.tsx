@@ -2,15 +2,15 @@ import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 //import logo from './logo.svg';
 import "./NovaSolicitacao.css";
-import "../../globals/globalStyle.css";
+import "../../../globals/globalStyle.css";
 import { MaskedInput } from "antd-mask-input";
 import "antd/dist/antd.css";
 import { Col, Row, Form, Input, Select, Modal, message } from "antd";
-import { isLogged, validateCPF, validateEmail, validateEscola, validateNome, validatePhone } from "../../globals/globalFunctions";
-import { postSolicitacao } from "../../services/SolicitacoesService";
+import { isLogged, validateCPF, validateEmail, validateEscola, validateNome, validatePhone } from "../../../globals/globalFunctions";
+import { postSolicitacao } from "../../../services/SolicitacoesService";
 import { useHistory } from "react-router-dom";
-import HeaderSimple from "../../visual_components/header/HeaderSimple";
-import FooterSimple from "../../visual_components/footer/FooterSimple";
+import HeaderSimple from "../../../visual_components/header/HeaderSimple";
+import FooterSimple from "../../../visual_components/footer/FooterSimple";
 import InputMask from 'antd-mask-input';
 
 function NovaSolicitacao() {
