@@ -14,7 +14,7 @@ import '../../globals/globalStyle.css'
 import 'react-credit-cards/es/styles-compiled.css';
 import Header from '../../visual_components/header/Header';
 import { useHistory } from 'react-router-dom';
-import { getTransacao, postTransacao, verificarPagamento } from '../../services/PagamentosServices';
+import { getTransacao, postTransacao, verificarPagamento, getTransacaoPrimeira, postTransacaoPrimeira, verificarPagamentoPrimeira } from '../../services/PagamentosServices';
 import MaskedInput from 'antd-mask-input/build/main/lib/MaskedInput';
 import { buscarCep, isLogged, logout, validateMaskValue } from '../../globals/globalFunctions';
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -78,15 +78,27 @@ export default function Pagamento() {
 
   useEffect(() => {
     const timer1 = setInterval(() => {
-      if (tabKey === "3" && idPix !== "") {
+      if (tabKey === "3" && idPix !== "" && originVar === "atualizacao") {
         verificarPagamento(idPix).then((res: any) => {
           if (res === undefined) {
             logout()
             history.replace("/")
           } else {
             if (res.data.status === "paid") {
-              // setIdPix("")
-              // clearInterval()
+              localStorage.setItem("idPix", idPix)
+              message.success('Pagamento efetuado com sucesso!')
+              history.replace('/atualizacao-cadastral')
+            }
+          }
+        })
+      }
+      else if (tabKey === "3" && idPix !== "" && originVar === "primeiravia") {
+        verificarPagamentoPrimeira(idPix).then((res: any) => {
+          if (res === undefined) {
+            logout()
+            history.replace("/")
+          } else {
+            if (res.data.status === "paid") {
               localStorage.setItem("idPix", idPix)
               message.success('Pagamento efetuado com sucesso!')
               history.replace('/atualizacao-cadastral')
@@ -101,7 +113,7 @@ export default function Pagamento() {
     }
   });
 
-  const valueDefault = origin === '1via' ? 9.99 : 7.85
+  const valueDefault = origin === 'primeiravia' ? 9.99 : 7.85
 
   const valuePlus = () => {
     if (tabKey === '1') {
@@ -113,7 +125,7 @@ export default function Pagamento() {
     }
   }
 
-    function changeFocus(e: any) {
+  function changeFocus(e: any) {
     setFocused(e.target.name);
   }
 
@@ -126,26 +138,50 @@ export default function Pagamento() {
   }
 
   useEffect(() => {
-    getTransacao(estudante.id).then((res: any) => {
-      if (res === undefined) {
-        logout()
-        history.replace("/")
-      } else {
-        if (res.data.__transactions__ !== 404) {
-          let transaction = res.data.__transactions__[0]
+    if (origin === "atualizacao") {
+      getTransacao(estudante.id).then((res: any) => {
+        if (res === undefined) {
+          logout()
+          history.replace("/")
+        } else {
+          if (res.data.__transactions__ !== 404) {
+            let transaction = res.data.__transactions__[0]
 
-          if (transaction.payment !== undefined) {
-            if (transaction.payment.paymentStatus === "paid") {
-              history.replace('/redirect')
-            } else {
-              if (transaction.payment.type_payment === 'bank_slip') {
-                warning()
+            if (transaction.payment !== undefined) {
+              if (transaction.payment.paymentStatus === "paid") {
+                history.replace('/redirect')
+              } else {
+                if (transaction.payment.type_payment === 'bank_slip') {
+                  warning()
+                }
+              }
+            }
+          }
+        }
+      })
+    } else if (origin === "primeiravia") {
+      getTransacaoPrimeira(estudante.id).then((res: any) => {
+        if (res === undefined) {
+          logout()
+          history.replace("/")
+        } else {
+          if (res.data.__transactions__ !== 404) {
+            let transaction = res.data.__transactions__[0]
+
+            if (transaction.payment !== undefined) {
+              if (transaction.payment.paymentStatus === "paid") {
+                history.replace('/redirect')
+              } else {
+                if (transaction.payment.type_payment === 'bank_slip') {
+                  warning()
+                }
               }
             }
           }
         }
       }
-    })
+      )
+    }
   }, [])
 
   const Cpf = (values: any) => {
@@ -172,7 +208,7 @@ export default function Pagamento() {
       type = 'pix'
     }
 
-    if (cepExist && cepIsValid && cpfIsValid) {
+    if (cepExist && cepIsValid && cpfIsValid && origin === "atualizacao") {
       setLoading1(true)
 
       let response = await postTransacao(estudante.id, type, values, estudanteModel.nome, estudanteModel.email, estudanteModel.telefone)
@@ -204,7 +240,41 @@ export default function Pagamento() {
           setLoading1(false)
         }
       }
-    } else {
+    }
+    else if (cepExist && cepIsValid && cpfIsValid && origin === "primeiravia") {
+      setLoading1(true)
+
+      let response = await postTransacaoPrimeira(estudante.id, type, values, estudanteModel.nome, estudanteModel.email, estudanteModel.telefone)
+      if (response === undefined) {
+        logout()
+        history.replace("/")
+      } else {
+        if (response.status === 200) {
+          if (tabKey === "1") {
+            if (response.data.errors.number === undefined) {
+              if (response.data.success) {
+                message.success(response.data.message)
+                history.replace('/atualizacao-cadastral')
+              } else {
+                message.error("Revise os dados do cartão.");
+              }
+            } else {
+              message.error("Revise os dados do cartão.");
+            }
+          }
+
+          if (tabKey === "2") {
+            setIugulPdfUrl(response.data.secure_url)
+            setVisible(true)
+          }
+          setLoading1(false)
+        } else {
+          message.error('Algo deu errado!')
+          setLoading1(false)
+        }
+      }
+    }
+    else {
       if (!cpfIsValid) {
         message.error('CPF inválido');
       }
@@ -903,13 +973,24 @@ export default function Pagamento() {
                                     (
                                       <Button onClick={() => {
                                         setLoading(true)
-                                        postTransacao(estudante.id, 'pix', {}, estudanteModel.nome, estudanteModel.email, estudanteModel.telefone).then((res: any) => {
-                                          setLoading(false)
-                                          setImgQrCodePixUrl(res.data.pix.qrcode)
-                                          setQrCodePixUrl(res.data.pix.qrcode_text)
-                                          setQRCodeGenerated(true)
-                                          setIdPix(res.data.id)
-                                        })
+                                        if (originVar === "atualizacao") {
+                                          postTransacao(estudante.id, 'pix', {}, estudanteModel.nome, estudanteModel.email, estudanteModel.telefone).then((res: any) => {
+                                            setLoading(false)
+                                            setImgQrCodePixUrl(res.data.pix.qrcode)
+                                            setQrCodePixUrl(res.data.pix.qrcode_text)
+                                            setQRCodeGenerated(true)
+                                            setIdPix(res.data.id)
+                                          })
+                                        }
+                                        else if (originVar === "primeiravia") {
+                                          postTransacaoPrimeira(estudante.id, 'pix', {}, estudanteModel.nome, estudanteModel.email, estudanteModel.telefone).then((res: any) => {
+                                            setLoading(false)
+                                            setImgQrCodePixUrl(res.data.pix.qrcode)
+                                            setQrCodePixUrl(res.data.pix.qrcode_text)
+                                            setQRCodeGenerated(true)
+                                            setIdPix(res.data.id)
+                                          })
+                                        }
                                       }} loading={loading} type="primary" shape="round" icon={<QrcodeOutlined />} size={"middle"}>
                                         Gerar QR Code
                                       </Button>

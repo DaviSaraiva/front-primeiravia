@@ -11,7 +11,7 @@ export default function Menu() {
         history.push({
             pathname: "/pagamento",
             state: {
-                origin: '1via'
+                origin: 'primeiravia'
             }
         });
     }
@@ -23,8 +23,6 @@ export default function Menu() {
             }
         });
     }
-
-
 
     return (
         <div className={"fullDiv"}>
