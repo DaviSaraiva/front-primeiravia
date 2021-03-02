@@ -15,12 +15,14 @@ import homeprimeira from "./atualizacao/pages/home/Home";
 import Loading from "./pages/loading/Loading";
 import RecSenha from "./pages/recuperar_senha/RecSenha";
 import SegRecupera from "./pages/recuperar_senha/SegRecuperacao";
+import Menu from "./pages/menu/Menu";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Login} />
+        <Route path="/menu" component={Menu} />
         <Route path="/redirect" component={Loading} />
         <Route path="/minhas-solicitacoes" component={Main} />
         <Route path="/registro" component={RegistrationForm} />

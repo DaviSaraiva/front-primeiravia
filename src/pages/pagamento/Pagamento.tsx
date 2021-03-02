@@ -34,6 +34,13 @@ export default function Pagamento() {
     history.replace('/')
   }
 
+  let originVar: string = "atualizacao"
+
+  if (history.location.state !== undefined) {
+    let a: any = history.location.state
+    originVar = a.origin
+  }
+
   let estudanteModel = { id: "", nome: "", email: "", telefone: "", cpf: "" }
   let estudanteLocal = localStorage.getItem("usuario")
 
@@ -51,6 +58,7 @@ export default function Pagamento() {
 
   const { TabPane } = Tabs;
 
+  const [origin] = useState(originVar)
   const [iugulPdfUrl, setIugulPdfUrl] = useState('')
   const [visible, setVisible] = useState(false)
   const [loading, setLoading] = useState(false);
@@ -93,7 +101,7 @@ export default function Pagamento() {
     }
   });
 
-  const valueDefault = 7.85
+  const valueDefault = origin === '1via' ? 9.99 : 7.85
 
   const valuePlus = () => {
     if (tabKey === '1') {
@@ -105,7 +113,7 @@ export default function Pagamento() {
     }
   }
 
-  function changeFocus(e: any) {
+    function changeFocus(e: any) {
     setFocused(e.target.name);
   }
 
@@ -225,8 +233,8 @@ export default function Pagamento() {
       } else if (tabKey === '2') {
         form2.setFieldsValue(cepData)
         form2.setFieldsValue({ 'cidade': cepData.localidade })
-      }      
-      
+      }
+
       setCepExist(true)
     } else {
       setCepExist(false)
