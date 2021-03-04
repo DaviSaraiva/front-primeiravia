@@ -24,8 +24,8 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/menu" component={Menu} />
-        <Route path="/redirect" component={Loading} />
         <Route path="/redirectprimeira" component={LoadingPrimeira} />
+        <Route path="/redirect" component={Loading} />
         <Route path="/minhas-solicitacoes" component={Main} />
         <Route path="/registro" component={RegistrationForm} />
         <Route path="/esqueci-minha-senha" component={RecSenha} />

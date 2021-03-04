@@ -8,7 +8,7 @@ import InputMask from 'antd-mask-input';
 import './Pagamento.css';
 import './Pagamento.scss';
 import { cpf } from 'cpf-cnpj-validator';
-import { CreditCardOutlined, BarcodeOutlined, AppstoreOutlined, QrcodeOutlined, DownloadOutlined, UserOutlined, PictureOutlined, SolutionOutlined, FileDoneOutlined, HomeOutlined, IdcardOutlined, MessageFilled } from '@ant-design/icons';
+import { CreditCardOutlined, BarcodeOutlined, AppstoreOutlined, QrcodeOutlined, DownloadOutlined, UserOutlined, PictureOutlined, SolutionOutlined, FileDoneOutlined, HomeOutlined, IdcardOutlined } from '@ant-design/icons';
 import Cards from 'react-credit-cards';
 import '../../globals/globalStyle.css'
 import 'react-credit-cards/es/styles-compiled.css';
@@ -40,6 +40,7 @@ export default function Pagamento() {
     let a: any = history.location.state
     originVar = a.origin
   }
+  alert(originVar)
 
   let estudanteModel = { id: "", nome: "", email: "", telefone: "", cpf: "" }
   let estudanteLocal = localStorage.getItem("usuario")
@@ -159,7 +160,8 @@ export default function Pagamento() {
           }
         }
       })
-    } else if (origin === "primeiravia") {
+    } 
+    else if (origin === "primeiravia") {
       getTransacaoPrimeira(estudante.id).then((res: any) => {
         if (res === undefined) {
           logout()
