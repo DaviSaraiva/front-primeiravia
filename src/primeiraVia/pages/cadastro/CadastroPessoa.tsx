@@ -85,10 +85,8 @@ export default function CadastroPessoa() {
 
   useEffect(() => {
     if (isLogged()) {
-
       let idPix: any = localStorage.getItem("idPix")
       let varEstado = "first"
-
       if (idPix === null || idPix === undefined || idPix === "") {
         getTransacaoPrimeira(estudanteModel.id)
           .then((res: any) => {
