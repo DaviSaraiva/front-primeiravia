@@ -101,7 +101,7 @@ export default function Pagamento() {
             if (res.data.status === "paid") {
               localStorage.setItem("idPix", idPix)
               message.success('Pagamento efetuado com sucesso!')
-              history.replace('/atualizacao-cadastral')
+              history.replace('/menu')
             }
           }
         })
@@ -170,7 +170,7 @@ export default function Pagamento() {
 
             if (transaction.payment !== undefined) {
               if (transaction.payment.paymentStatus === "paid") {
-                history.replace('/redirect')
+                history.replace('/redirectprimeira')
               } else {
                 if (transaction.payment.type_payment === 'bank_slip') {
                   warning()
@@ -254,7 +254,7 @@ export default function Pagamento() {
             if (response.data.errors.number === undefined) {
               if (response.data.success) {
                 message.success(response.data.message)
-                history.replace('/atualizacao-cadastral')
+                history.replace('/menu')
               } else {
                 message.error("Revise os dados do cartão.");
               }

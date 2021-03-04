@@ -4,13 +4,13 @@ import 'antd/dist/antd.css';
 import './Loading.css';
 import '../../globals/globalStyle.css'
 import { useHistory } from 'react-router-dom';
-import { getTransacao, verificarPagamento } from '../../services/PagamentosServices';
+import { getTransacaoPrimeira, verificarPagamentoPrimeira } from '../../services/PagamentosServices';
 import { isLogged, logout } from '../../globals/globalFunctions';
 
 // eslint-disable-next-line no-console
 // eslint-disable-next-line react-hooks/rules-of-hooks
 
-export default function Loading() {
+export default function LoadingPrimeira() {
     let history = useHistory()
 
     if (!isLogged()) {
@@ -34,7 +34,7 @@ export default function Loading() {
                 history.replace({
                     pathname: address,
                     state: {
-                        origin: 'atualizacao'
+                        origin: 'primeiravia'
                     }
                 })
             }
@@ -47,7 +47,8 @@ export default function Loading() {
 
 
     useEffect(() => {
-        getTransacao(estudanteLocal.id)
+
+        getTransacaoPrimeira(estudanteLocal.id)
             .then((res: any) => {
                 if (res === undefined) {
                     logout()
@@ -61,7 +62,7 @@ export default function Loading() {
                             if (transaction.payment.paymentStatus === "paid") {
                                 if (atualizacao === "first") {
                                     setHasAddress(true)
-                                    setAddress('/atualizacao-cadastral')
+                                    setAddress('/primeiravia-cadastro')
                                     localStorage.setItem("isf", "true")
                                 } else {
                                     if (urlSolicitante === "bloqueio") {
@@ -94,14 +95,14 @@ export default function Loading() {
 
         let idPixStorage = localStorage.getItem("idPix")
         if (idPixStorage !== undefined && idPixStorage != null) {
-            verificarPagamento(idPixStorage).then((res: any) => {
+            verificarPagamentoPrimeira(idPixStorage).then((res: any) => {
                 if (res === undefined) {
                     logout()
                     history.replace("/")
                 } else {
                     if (res.data.status === "paid") {
                         setHasAddress(true)
-                        setAddress('/atualizacao-cadastral')
+                        setAddress('/primeiravia-cadastro')
                     }
                 }
             })
@@ -111,7 +112,7 @@ export default function Loading() {
     return (
         <div className={"fullDiv"}>
             <div id={"divRedirectContent"}>
-                <p>{address}</p>
+                <p>tudo bem hahahiih{address}</p>
                 <img id={"loadingImg"} src={"http://portal.ufvjm.edu.br/a-universidade/cursos/grade_curricular_ckan/loading.gif"} alt={"loading"} />
                 <img id={"logoRedirect"} src={"http://transmobibeneficios.com.br/estudante/assets/images/logo.svg"} alt={"logo"} />
             </div>

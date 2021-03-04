@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import './Menu.css';
 import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
+import { isLogged } from '../../globals/globalFunctions';
 
 export default function Menu() {
     let history = useHistory();
-
+    if (!isLogged()) {
+        history.replace('/')
+    }
     function Primeira() {
         history.push({
-            pathname: "/pagamento",
+            pathname: "/redirectprimeira",
             state: {
                 origin: 'primeiravia'
             }
@@ -17,7 +20,7 @@ export default function Menu() {
     }
     function Atualizacao() {
         history.push({
-            pathname: "/pagamento",
+            pathname: "/redirect",
             state: {
                 origin: 'atualizacao'
             }

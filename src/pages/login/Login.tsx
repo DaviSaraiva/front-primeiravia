@@ -19,7 +19,7 @@ export default function Login() {
     const [form] = Form.useForm();
 
     if (isLogged()) {
-        history.replace('/redirect')
+        history.replace('/menu')
     }
 
     const [loading, setLoading] = useState(false);
@@ -54,8 +54,8 @@ export default function Login() {
                 }
 
                 localStorage.setItem("usuario", JSON.stringify(obj));
-                
-                history.push('/redirect')
+
+                history.push('/menu')
             }
             setLoading(false)
         } else {
@@ -136,9 +136,6 @@ export default function Login() {
                             <div className={"divBtnCadastrese"}>
                                 <p id={"textToRegistro"}>Ainda não é cadastrado?</p>
                                 <Link id={"linkToRegistro"} to={"/registro"}>Crie uma conta</Link>
-                                {/* <Button type="default" size={"large"} onClick={() => goToRegistro()}>
-                                    Crie uma conta
-                                </Button> */}
                             </div>
                         </Col>
                         <Col xs={2} sm={2} md={2} lg={5} xl={5} />

@@ -13,6 +13,7 @@ import CadastroAtualizacao from "./atualizacao/pages/cadastro/CadastroPessoa";
 import HomeAtualizacao from "./atualizacao/pages/home/Home";
 import homeprimeira from "./atualizacao/pages/home/Home";
 import Loading from "./pages/loading/Loading";
+import LoadingPrimeira from "./pages/loading/LoadingPrimeira";
 import RecSenha from "./pages/recuperar_senha/RecSenha";
 import SegRecupera from "./pages/recuperar_senha/SegRecuperacao";
 import Menu from "./pages/menu/Menu";
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route exact path="/" component={Login} />
         <Route path="/menu" component={Menu} />
         <Route path="/redirect" component={Loading} />
+        <Route path="/redirectprimeira" component={LoadingPrimeira} />
         <Route path="/minhas-solicitacoes" component={Main} />
         <Route path="/registro" component={RegistrationForm} />
         <Route path="/esqueci-minha-senha" component={RecSenha} />
