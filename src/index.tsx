@@ -8,7 +8,7 @@ import Main from "./bloqueio/pages/main/Main";
 import Login from "./pages/login/Login";
 import RegistrationForm from "./pages/register/Form";
 import Pagamento from "./pages/pagamento/Pagamento";
-import CadastroPrimeiraVia from "./primeiraVia/pages/cadastro/CadastroPessoa";
+import CadastroPrimeiraVia from "./primeiraVia/pages/cadastro/CadastroPessoa"
 import CadastroAtualizacao from "./atualizacao/pages/cadastro/CadastroPessoa";
 import HomeAtualizacao from "./atualizacao/pages/home/Home";
 import homeprimeira from "./atualizacao/pages/home/Home";

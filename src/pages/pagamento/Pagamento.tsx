@@ -75,10 +75,11 @@ export default function Pagamento() {
   const [estudante,] = useState(estudanteModel);
   const [focused, setFocused] = useState();
   const [idPix, setIdPix] = useState("");
+  const valueDefault = origin === 'primeiravia' ? 9.99 : 7.85
 
   useEffect(() => {
     const timer1 = setInterval(() => {
-      if (tabKey === "3" && idPix !== "" && originVar === "atualizacao") {
+      if (tabKey === "3" && idPix !== "" && origin === "atualizacao") {
         verificarPagamento(idPix).then((res: any) => {
           if (res === undefined) {
             logout()
@@ -92,7 +93,7 @@ export default function Pagamento() {
           }
         })
       }
-      else if (tabKey === "3" && idPix !== "" && originVar === "primeiravia") {
+      else if (tabKey === "3" && idPix !== "" && origin === "primeiravia") {
         verificarPagamentoPrimeira(idPix).then((res: any) => {
           if (res === undefined) {
             logout()
@@ -101,7 +102,7 @@ export default function Pagamento() {
             if (res.data.status === "paid") {
               localStorage.setItem("idPix", idPix)
               message.success('Pagamento efetuado com sucesso!')
-              history.replace('/menu')
+              history.replace('/primeiravia-cadastro')
             }
           }
         })
@@ -113,7 +114,6 @@ export default function Pagamento() {
     }
   });
 
-  const valueDefault = origin === 'primeiravia' ? 9.99 : 7.85
 
   const valuePlus = () => {
     if (tabKey === '1') {
@@ -254,7 +254,7 @@ export default function Pagamento() {
             if (response.data.errors.number === undefined) {
               if (response.data.success) {
                 message.success(response.data.message)
-                history.replace('/menu')
+                history.replace('/primeiravia-cadastro')
               } else {
                 message.error("Revise os dados do cartão.");
               }

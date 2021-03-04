@@ -64,6 +64,8 @@ export default function LoadingPrimeira() {
                                     setHasAddress(true)
                                     setAddress('/primeiravia-cadastro')
                                     localStorage.setItem("isf", "true")
+                                    console.log(2)
+
                                 } else {
                                     if (urlSolicitante === "bloqueio") {
                                         setHasAddress(true)

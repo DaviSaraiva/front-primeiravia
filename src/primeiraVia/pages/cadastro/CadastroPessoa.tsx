@@ -14,7 +14,7 @@ import Header from '../../../visual_components/header/Header';
 import { useHistory } from 'react-router-dom';
 import { CreditCardOutlined, FileDoneOutlined, HomeOutlined, IdcardOutlined, PictureOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
 import { getStep } from '../../../services/AccessServices';
-import { getTransacao, verificarPagamento } from '../../../services/PagamentosServices';
+import { getTransacaoPrimeira, verificarPagamentoPrimeira } from '../../../services/PagamentosServices';
 import { isLogged, logout } from '../../../globals/globalFunctions';
 
 const { Step } = Steps;
@@ -78,7 +78,7 @@ export default function CadastroPessoa() {
           setCurrent(1)
         }
       } else {
-        history.replace('/redirect')
+        history.replace('/redirectprimeira')
       }
     })
   }
@@ -90,7 +90,7 @@ export default function CadastroPessoa() {
       let varEstado = "first"
 
       if (idPix === null || idPix === undefined || idPix === "") {
-        getTransacao(estudanteModel.id)
+        getTransacaoPrimeira(estudanteModel.id)
           .then((res: any) => {
             if (res !== undefined) {
               if (res.data.__transactions__ !== 404) {
@@ -104,17 +104,17 @@ export default function CadastroPessoa() {
                     if (payment === "paid") {
                       varEstado = atualizacao
                     } else {
-                      history.replace("/redirect")
+                      history.replace("/redirectprimeira")
                     }
                   } else {
-                    history.replace("/redirect")
+                    history.replace("/redirectprimeira")
                     varEstado = "first"
                   }
                 } else {
-                  history.replace('/redirect')
+                  history.replace('/redirectprimeira')
                 }
               } else {
-                history.replace('/redirect')
+                history.replace('/redirectprimeira')
               }
             }
 
@@ -124,7 +124,7 @@ export default function CadastroPessoa() {
 
       } else {
         let pixIsPaid = false
-        verificarPagamento(idPix)
+        verificarPagamentoPrimeira(idPix)
           .then((res: any) => {
             if (res === undefined) {
               logout()
@@ -132,7 +132,7 @@ export default function CadastroPessoa() {
             } else {
               if (res.data.status === "paid") {
                 pixIsPaid = true
-                getTransacao(estudanteModel.id).then((res: any) => {
+                getTransacaoPrimeira(estudanteModel.id).then((res: any) => {
                   if (res.data.__transactions__ !== 404) {
                     if (res.status === 200) {
                       const atualizacao = res.data.__transactions__[0].requestStatus;
@@ -158,7 +158,7 @@ export default function CadastroPessoa() {
                           varEstado = "first"
                         }
                       } else {
-                        history.replace('/redirect')
+                        history.replace('/redirectprimeira')
                       }
                     }
                   } else {
@@ -166,7 +166,7 @@ export default function CadastroPessoa() {
                   }
                 });
               } else {
-                history.replace('/redirect')
+                history.replace('/redirectprimeira')
               }
             }
             setStep(varEstado)

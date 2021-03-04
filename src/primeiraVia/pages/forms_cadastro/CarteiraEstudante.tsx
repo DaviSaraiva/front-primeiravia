@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
 import ModalVerifyInfoEstudante from '../../../visual_components/modals/ModalVerifyInfoEstudante';
 import { confirmarDocumentos, getDocumentPicture, getDocuments, setFotoCarteira } from '../../../services/AccessServices';
-import { getTransacao } from '../../../services/PagamentosServices';
+import {  getTransacaoPrimeira } from '../../../services/PagamentosServices';
 
 export default function FotoCarteiraEstudante(props: any) {
   let obj = getIdUser()
@@ -141,7 +141,7 @@ export default function FotoCarteiraEstudante(props: any) {
   )
 
   const onConfirm = () => {
-    getTransacao(idUser)
+    getTransacaoPrimeira(idUser)
       .then((res: any) => {
         if (res.data.__transactions__ !== 404) {
           if (res.status === 200) {

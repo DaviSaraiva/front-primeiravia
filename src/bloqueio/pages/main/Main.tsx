@@ -90,10 +90,7 @@ function Main() {
     }
 
     const columns = [
-        // {
-        //     title: 'id',
-        //     dataIndex: 'id_solicitacao'
-        // },
+
         {
             title: 'Nome',
             dataIndex: 'name_aluno',
@@ -194,20 +191,7 @@ function Main() {
             ellipsis: {
                 showTitle: false,
             },
-            // filters: [
-            //     {
-            //         text: 'Concluídas',
-            //         value: 'concluidas',
-            //     },
-            //     {
-            //         text: 'Pendentes',
-            //         value: 'pendentes',
-            //     },
-            // ],
-            // filterMultiple: false,
-            // onFilter: (value: any, record: any) => record.situation === value,
-            // sorter: (a: any, b: any) => a.value - b.name.length,
-            // sortDirections: ['descend'],
+
             render: (situation: Boolean) => {
                 let color = situation ? 'green' : 'volcano';
                 let valueText = situation ? "Concluído" : "Pendente"

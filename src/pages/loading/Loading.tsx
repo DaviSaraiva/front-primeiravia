@@ -63,6 +63,7 @@ export default function Loading() {
                                     setHasAddress(true)
                                     setAddress('/atualizacao-cadastral')
                                     localStorage.setItem("isf", "true")
+                                    console.log(1)
                                 } else {
                                     if (urlSolicitante === "bloqueio") {
                                         setHasAddress(true)
